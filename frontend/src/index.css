@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header ul li:hover   {
+  @apply scale-95 duration-300 text-blue-200
+}
+form  input,textarea,select {
+  color: black;
+}
+.addProdt input,select,textarea {
+  @apply p-2  rounded-md
+}
