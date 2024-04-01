@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     ,{
       element:<AdminDashn/>,
       children:[
-           { path:'/',element:<Dashboard/>},
+           { path:'/dashboard',element:<Dashboard/>},
           { path:'/dashboard/all_products',element:<AllProducts/>},
           { path:'/dashboard/all_categorys',element:<AllCategorys/>},
           { path:'/dashboard/add_products',element:<AddProduct/>},

@@ -25,8 +25,8 @@ export default function AdminDashn() {
             setLoading(false);
           })
           .catch(({ response }) => {
-            navigate("/login/admin");
             if (response.status === 401) {
+              navigate("/login/admin");
               localStorage.removeItem("access_token");
             }
           });
@@ -48,7 +48,7 @@ export default function AdminDashn() {
         <div className="flex justify-around items-center z-20 blur-none ">
           <ul className=" flex gap-6 text-md font-semibold text-white">
             <li>
-              <Link to={"/"}>Dashboard</Link>
+              <Link to={"/dashboard"}>Dashboard</Link>
             </li>
             <li>
               <Link to={"/dashboard/add_products"}>Add Product</Link>

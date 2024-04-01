@@ -29,7 +29,7 @@ export default function Login() {
         localStorage.setItem("access_token", response.data.token);
         dispatche(login(response.data.token))
         dispatche(setUser(response.data.user))
-        navigate("/");
+        navigate("/dashboard");
       }
     } catch (err) {
       console.error(err);

@@ -18,7 +18,7 @@ const selectedProduct = allProducts?.find((item) => item.id == id)
 
   return (
     <section
-      className="container min-h-screen pt-[80px] px-9 mx-auto grid   grid-cols-6 gap-4 items-center justify-center "
+      className="container min-h-screen  px-9 mx-auto grid   grid-cols-6 gap-4 items-center justify-center "
       id="up"
     >
       <div className=" col-span-6 md:col-span-3  mx-auto flex items-center justify-center">

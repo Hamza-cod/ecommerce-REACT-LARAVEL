@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 
 use App\Models\User;
@@ -24,8 +25,9 @@ Route::get('/', function () {
 // Route::resource('category', CategoryController::class)->only(['show', 'index']);
 
 // Route::group(['middleware' => ["auth:sanctum"]],function ()  {
-    Route::resource('product',ProductController::class);
-    Route::resource('category',CategoryController::class);
+    Route::apiResource('product',ProductController::class);
+    Route::apiResource('category',CategoryController::class);
+    Route::apiResource('order',OrderController::class);
 // });
 
 

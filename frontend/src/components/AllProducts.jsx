@@ -10,28 +10,24 @@ import { ProductsApi } from "../Api/products";
 export default function AllProducts() {
   const products  = useSelector(productsSelectore)
   const dispatch = useDispatch()
-  const [info,setInfo]= useState('')
+  const [info,setInfo]= useState(false)
   // console.log(products);
   const  getProducts = async ()=>{
       const {data}= await ProductsApi.getAllProducts();
-      if(data.length<1){
-        setInfo('No products yet')
+      if(data.products.length<1){
+        setInfo(true)
       }
       dispatch(setProducts(data.products))
   }
    useEffect(() => {
     getProducts()
  }, []);
-
-  if(products.length <1){
-    return <>
-    <div>
+ if (info){
+      return <div>No products yet</div>
+    }else if(products.length ===0){
+   return <div>
       Loading ...
     </div>
-    </>
-  }
-  if (info){
-    return <div>{info}</div>
   }
   
 

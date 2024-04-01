@@ -11,7 +11,7 @@ export default function GestLogin() {
    
 useEffect(() => {
         if(authorized){
-          navigate('/')
+          navigate('/dashboard')
         }
   },[]);
   return (
