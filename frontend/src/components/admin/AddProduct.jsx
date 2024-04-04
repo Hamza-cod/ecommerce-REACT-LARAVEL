@@ -1,9 +1,9 @@
 import {  useEffect, useRef, useState } from "react"
-import  axiosClient  from "../Axios/axios"
+import  axiosClient  from "../../Axios/axios"
 import { useDispatch, useSelector } from "react-redux"
-import { categoriesSelectore } from "../redux/selectors"
-import { setCategories } from "../redux/sclices/categorySlice"
-import { CategoriesApi } from "../Api/categories"
+import { categoriesSelectore } from "../../redux/selectors"
+import { setCategories } from "../../redux/sclices/categorySlice"
+import { CategoriesApi } from "../../Api/categories"
 
 export default function AddProduct() {
 

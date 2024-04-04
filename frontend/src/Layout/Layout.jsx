@@ -8,7 +8,7 @@ export default function Layout() {
   return (
     <>
        <Nav/>
-      <div className="pt-8  min-h-[100vh]">
+      <div className=" pt-[100px]  min-h-[100vh]">
         <Outlet/>
       </div>
       <div>

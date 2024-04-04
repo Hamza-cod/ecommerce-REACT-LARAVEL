@@ -5,5 +5,6 @@ const globalState = {
    },
    products : [],
    categories : [],
+   orders : [],
 }
 export default globalState;

@@ -1,10 +1,10 @@
 
 import { useEffect, useRef, useState } from "react"
-import  axiosClient  from "../Axios/axios"
+import  axiosClient  from "../../Axios/axios"
 import { useNavigate, useParams } from "react-router-dom";
-import { CategoriesApi } from "../Api/categories";
+import { CategoriesApi } from "../../Api/categories";
 import { useSelector } from 'react-redux';
-import { categoriesSelectore } from "../redux/selectors";
+import { categoriesSelectore } from "../../redux/selectors";
 
 export default function UpdateCategory() {
   const nameRef = useRef()

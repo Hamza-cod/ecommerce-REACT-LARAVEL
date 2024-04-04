@@ -2,7 +2,7 @@
 import  {Link } from 'react-router-dom';
 export default function Nav() {
   return (
-    <header className="text-slate-700 container relative mx-auto flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center">
+    <header className="fixed w-full bg-white text-slate-700 container  mx-auto flex flex-col overflow-hidden px-4 py-4 lg:flex-row lg:items-center">
   <a href="#" className="flex items-center whitespace-nowrap text-2xl font-black">
     <span className="mr-2 w-8">
       <img src="/images/JOJj79gp_Djhwdp_ZOKLL.png" alt="" />

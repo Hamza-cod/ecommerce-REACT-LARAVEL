@@ -5,14 +5,15 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import AdminDashn from "../Layout/AdminDash";
 import GestLogin from "../Layout/GestLogin";
-import AllProducts from "../components/AllProducts";
-import AddProduct from "../components/AddProduct";
-import AddCategory from "../components/AddCategory";
-import AllCategorys from "../components/AllCategorys";
-import UpdateProduct from "../components/UpdateProduct";
-import UpdateCategory from "../components/UpdateCategory";
+import AddProduct from "../components/admin/AddProduct";
+import AddCategory from "../components/admin/AddCategory";
+import AllCategorys from "../components/admin/AllCategorys";
+import UpdateProduct from "../components/admin/UpdateProduct";
+import UpdateCategory from "../components/admin/UpdateCategory";
 import ProductDetails from "../pages/ProductDetails";
 import Checkout from "../pages/Checkout";
+import AllProducts from './../components/admin/AllProducts';
+import OrdersList from "../components/admin/OrdersList";
 
 const router = createBrowserRouter([
     {
@@ -20,11 +21,11 @@ const router = createBrowserRouter([
       children :[
           { path:'/',element:<Home/>},
           { path:'product/:id',element:<ProductDetails/>},
-          { path:'/order/:id',element:<Checkout/>},
           { path:'*',element:<h1 className="h-[50vh] mt-11 bg-blue-400">not found</h1>},
            
       ]
-    }
+    },
+    { path:'/order/:id',element:<Checkout/>}
     ,{
       element:<GestLogin/>,
       children:[
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
           { path:'/dashboard/add_categorys',element:<AddCategory/>},
           { path:'/dashboard/product/:id/update',element:<UpdateProduct/>},
           { path:'/dashboard/category/:id/update',element:<UpdateCategory />},
+          { path:'/dashboard/orders',element:<OrdersList />},
           { path:'/dashboard/*',element:<div className="mt-9">Not Found</div>},
       ]
     }

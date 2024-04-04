@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import globalState from "../state";
-// console.log(iniState)
 export const loginSlice = createSlice({
   name:'login',
   initialState:globalState,
@@ -9,9 +8,10 @@ export const loginSlice = createSlice({
       return {...state,login:true}
     },
     logout:(state)=>{
-    return {...state,login:{accessToken:null,user:{}}}
+    localStorage.removeItem('access_token');
+    return {...state,login:{user:{}}}
     },
-    setUser:(state,{payload = {}})=>{
+    setUser:(state,{payload })=>{
       return {...state,login: {
       ...state.login,
       user: payload

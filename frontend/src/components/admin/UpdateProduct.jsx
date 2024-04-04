@@ -1,10 +1,10 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import axiosClient from "../Axios/axios";
+import axiosClient from "../../Axios/axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { categoriesSelectore, productsSelectore } from "../redux/selectors";
-import { CategoriesApi } from "../Api/categories";
-import { setCategories } from "../redux/sclices/categorySlice";
+import { categoriesSelectore, productsSelectore } from "../../redux/selectors";
+import { CategoriesApi } from "../../Api/categories";
+import { setCategories } from "../../redux/sclices/categorySlice";
 
 export default function UpdateProduct() {
   const { id } = useParams();

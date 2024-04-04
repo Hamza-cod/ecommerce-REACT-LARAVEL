@@ -1,6 +1,6 @@
 
 import { useRef, useState } from "react"
-import  axiosClient  from "../Axios/axios"
+import  axiosClient  from "../../Axios/axios"
 import { useParams } from "react-router-dom";
 
 export default function AddCategory() {

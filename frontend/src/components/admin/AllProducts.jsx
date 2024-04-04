@@ -1,12 +1,13 @@
 
 import { Link } from "react-router-dom"
 import { MdDeleteForever } from "react-icons/md";
+import {  FaRegEye } from "react-icons/fa";
 import { MdEditDocument } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { productsSelectore } from "../redux/selectors";
+import { productsSelectore } from "../../redux/selectors";
 import { useEffect, useState } from "react";
-import { removeProduct, setProducts } from "../redux/sclices/productSlice";
-import { ProductsApi } from "../Api/products";
+import { removeProduct, setProducts } from "../../redux/sclices/productSlice";
+import { ProductsApi } from "../../Api/products";
 export default function AllProducts() {
   const products  = useSelector(productsSelectore)
   const dispatch = useDispatch()
@@ -61,6 +62,9 @@ export default function AllProducts() {
         </button>
         <Link to={`/dashboard/product/${product.id}/update`} className=" w-max p-2 bg-blue-400 rounded-md mx-4">
            <MdEditDocument style={{fontSize:"20px"}}/>
+        </Link>
+        <Link to={`/product/${product.id}/`} target="_blank" className=" w-max p-2 bg-blue-400 rounded-md mx-4">
+           <FaRegEye style={{fontSize:"20px"}}/>
         </Link>
         </td>
       </tr>

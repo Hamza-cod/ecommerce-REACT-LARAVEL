@@ -4,7 +4,7 @@ export const ProductsApi = {
     return await axiosClient.get('/product');
   },
   getOneProduct : async (id) => {
-    return await axiosClient.get('/product/'+1);
+    return await axiosClient.get('/product/'+id);
   },
   updateProduct : async (id,data) => {
     return await axiosClient.post('product/'+id,data,{

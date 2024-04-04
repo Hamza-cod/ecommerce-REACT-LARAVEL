@@ -3,9 +3,9 @@ import { useEffect } from "react"
 import { MdDeleteForever, MdEditDocument } from "react-icons/md"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import { categoriesSelectore } from "../redux/selectors"
-import { CategoriesApi } from "../Api/categories"
-import { removeCategory, setCategories } from "../redux/sclices/categorySlice"
+import { categoriesSelectore } from "../../redux/selectors"
+import { CategoriesApi } from "../../Api/categories"
+import { removeCategory, setCategories } from "../../redux/sclices/categorySlice"
 
 export default function AllCategorys() {
   const dispatch =useDispatch()
