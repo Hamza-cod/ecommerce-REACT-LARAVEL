@@ -6,5 +6,6 @@ const globalState = {
    products : [],
    categories : [],
    orders : [],
+   dashboard :{}
 }
 export default globalState;

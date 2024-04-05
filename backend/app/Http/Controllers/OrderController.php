@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
@@ -37,15 +39,27 @@ class OrderController extends Controller
     }
     public function getOrdersPerDay(Request $request)
     {
-        $ordersPerDay = Order::select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as count'))
+         $ordersPerDay = Order::select(DB::raw("DATE_FORMAT(created_at, '%b %d / %y') as date"), DB::raw('count(*) as count'))
             ->groupBy('date')
-            ->orderBy('date', 'DESC')
+            ->orderBy('date')
             ->take(20)
             ->get();
+        $currentDate = Carbon::now()->toDateString();
+        $totalOrdersForCurrentDay = Order::whereDate('created_at', $currentDate)->count();
+        $totalSales = Order::all(['quantity','total'])
+        ->sum(function ($order) {
+            return $order->quantity * $order->total;
+        });
+        $totalSalesForCurrentDay = Order::whereDate('created_at', $currentDate)->get(['quantity','total'])
+        ->sum(function ($order) {
+            return $order->quantity * $order->total;
+        });
         $nbrOrders = Order::count();
         return response()->json([
-            'success' => true,
-            'message' => 'Orders per day fetched successfully',
+            'nbrOrders' => $nbrOrders,
+            'totalOrdersForCurrentDay' => $totalOrdersForCurrentDay,
+            'totalSales' => $totalSales,
+            'totalSalesForCurrentDay' => $totalSalesForCurrentDay,
             'data' => $ordersPerDay
         ]);
     }

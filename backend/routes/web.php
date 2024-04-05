@@ -27,7 +27,8 @@ Route::get('/', function () {
 // Route::group(['middleware' => ["auth:sanctum"]],function ()  {
     Route::apiResource('product',ProductController::class);
     Route::apiResource('category',CategoryController::class);
-    Route::apiResource('order',OrderController::class);
+    Route::middleware('auth')->apiResource('order',OrderController::class);
+    Route::middleware('auth')->get('/orderPerDay',[OrderController::class,'getOrdersPerDay']);
 // });
 
 
