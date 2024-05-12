@@ -14,7 +14,21 @@ const selectedProduct = allProducts?.find((item) => item.id == id)
   const ProducSameCAtegory = allProducts?.filter(
     (item) => item.id != id && item.category?.name == selectedProduct.category?.name
   );
-  
+  if(!selectedProduct)
+  {
+    return <div className=" w-full flex justify-center items-center py-3 px-96">
+    <div class="animate-pulse flex flex-col justify-center w-full items-center gap-4 ">
+  <div>
+    <div class="w-full h-6 bg-slate-400 rounded-md"></div>
+    <div class=" w-full h-4 bg-slate-400 mx-auto mt-3 rounded-md"></div>
+  </div>
+  <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+  <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+  <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+  <div class="h-7 bg-slate-400 w-1/2 rounded-md"></div>
+</div>
+    </div>
+  }
 
   return (
     <section

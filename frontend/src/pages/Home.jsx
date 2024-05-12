@@ -23,7 +23,9 @@ export default function Home() {
     <div className="mx-[50px] h-screen bg-blue-600/60 my-3">
     </div>
     {
-      products.length === 0?<div className="mx-auto">loading... </div>
+      products.length === 0?<div className="home-loader my-5 mx-auto flex justify-center items-center"><svg viewBox="25 25 50 50">
+  <circle r="20" cy="50" cx="50"></circle>
+</svg></div>
   :
 
     <div className="mx-auto  grid grid-cols-12 gap-4 gap-y-8 w-[80%] justify-center items-center min-h-[50vh] ">

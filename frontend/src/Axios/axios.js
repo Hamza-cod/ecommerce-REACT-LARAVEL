@@ -20,7 +20,7 @@ axiosClient.interceptors.response.use((response)=>{
   return response
 },(err)=>{
   const {response}= err;
-  if(response.status === 401){
+  if(response?.status === 401){
     localStorage.removeItem('access_token')
   }
   throw err

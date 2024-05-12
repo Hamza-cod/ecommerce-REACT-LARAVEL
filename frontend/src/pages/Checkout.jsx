@@ -68,11 +68,27 @@ if(ordred)
     ordred 
   </div>
 }
+if(!product)
+{
+  return (
+    <div className=" w-full flex justify-center items-center py-3 px-96">
+    <div class="animate-pulse flex flex-col justify-center w-full items-center gap-4 ">
+  <div>
+    <div class="w-full h-6 bg-slate-400 rounded-md"></div>
+    <div class=" w-full h-4 bg-slate-400 mx-auto mt-3 rounded-md"></div>
+  </div>
+  <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+  <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+  <div class="h-7 bg-slate-400 w-full rounded-md"></div>
+  <div class="h-7 bg-slate-400 w-1/2 rounded-md"></div>
+</div>
+    </div>
+  )
+}
 
-  if (product) {
-    let { image, price, name: title } = product;  
+  let { image, price, name: title } = product;  
 
-    return (
+  return (
       <div className="p-4 grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
         <div className="px-4 pt-8">
           <p className="text-xl font-medium">Order Summary</p>
@@ -241,11 +257,9 @@ if(ordred)
           </button>
           </form>
         </div>
-      </div>
-    );
-  } else if (!product) {
-    return <div>Loading...</div>;
-  } 
+   </div>
+);
+  
 };
 
 export default Checkout;
